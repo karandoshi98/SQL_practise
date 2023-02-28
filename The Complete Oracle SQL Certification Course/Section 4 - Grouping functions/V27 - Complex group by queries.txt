@@ -1,0 +1,12 @@
+--v27 - Complex group by queries
+
+select * from emp;
+
+SELECT JOB , COUNT(*)
+FROM EMP
+GROUP BY JOB;
+
+SELECT JOB ,DEPTNO, COUNT(*)
+FROM EMP
+GROUP BY JOB, DEPTNO
+ORDER BY JOB,DEPTNO ASC;

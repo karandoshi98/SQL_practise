@@ -1,0 +1,26 @@
+-- V13 - IN,BETWEEN, NULL
+
+SELECT ENAME , HIREDATE FROM EMP 
+WHERE ENAME IN ('FORD', 'SMITH');
+
+SELECT ENAME , HIREDATE FROM EMP 
+WHERE ENAME NOT IN ('FORD', 'SMITH');
+
+SELECT ENAME , HIREDATE FROM EMP 
+WHERE HIREDATE BETWEEN '05/01/1981' and '12/03/1981';
+
+SELECT ENAME , SAL FROM EMP 
+WHERE SAL BETWEEN '1100' and '2000';
+
+SELECT * FROM EMP
+WHERE COMM IS null;
+
+-- write a query that returns those employees that don't make any commission and have a salary greater than 100 but less than 5000.
+--The only exception is that their salary cannot cannot be equal to 3000.
+
+SELECT * FROM EMP 
+WHERE COMM IS NULL OR COMM = 0
+--AND SAL BETWEEN 100 AND 5000  -- this is wrong as we dont want the 100 and 5000 in the output
+AND SAL > 100 AND SAL < 5000
+--AND SAL != 3000; -- alternative to !=  -->  <>
+AND SAL <> 3000;

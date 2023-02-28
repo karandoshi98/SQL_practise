@@ -1,0 +1,19 @@
+--V25 - Grouping functions mion,max,avg,count
+
+select * from emp;
+
+select max(sal) as max_sal from emp;
+
+select min(sal) as min_sal from emp;
+
+select Sum(sal) as sum_sal from emp;
+
+-- manager that makes highest amount of money
+select max(sal) as max_sal from emp where lower(job) like '%manager%'; 
+
+select trunc(avg(sal),2) as avg_sal from emp;
+
+select count(1) from emp;
+
+--calculations
+select sum(sal) / count(*) , avg(sal) from emp;

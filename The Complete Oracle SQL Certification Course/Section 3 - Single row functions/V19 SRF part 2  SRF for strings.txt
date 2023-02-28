@@ -1,0 +1,32 @@
+    --V19 - SRF part 2
+
+    --length function
+    select length('Hello my name is karan') from DUAL;
+
+    select ename,length(ename) as length from EMP;
+
+    select ename,length(ename) as length from EMP where length(ename) = 6 ;
+
+    --substr fucntion
+
+    select 'Hello' ,substr('Hello',2,3) as "Extracted string" from DUAL;
+
+    --function inside a function
+    select 'Hello' ,length(substr('Hello',2,3)) as "Length of Extracted string" from DUAL;
+
+    --Lpad function
+    select lpad('hello',10,'&') from DUAL;
+
+    --rpad function
+    select rpad('hello',10,'&') from DUAL;
+
+    --ltrim function
+    select ltrim('hhhelhlohhh','h') from DUAL;
+
+    --rtrim function
+    select rtrim('hhhelhlohhh','h') from DUAL;
+
+    --trim from both ends
+    select ltrim(rtrim('hhhelhlohhh','h'),'h') from DUAL;
+
+    -- For more functions - https://www.techonthenet.com/oracle/functions/index.php

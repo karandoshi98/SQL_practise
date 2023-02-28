@@ -1,0 +1,21 @@
+--V26 - Group by and having
+
+--group by
+select job,trunc(avg(sal),2) as "Average Salary" from emp group by job;
+
+select job from emp group by job;
+
+select job, count(job) from emp group by job;
+
+select job, count(*) as COUNT_OF_EMP
+from emp 
+group by job
+Having count(*) = 2;
+
+-- query that returns those departments no. that have more than 3 employees working in them
+select * from EMP;
+
+SELECT DEPTNO
+FROM EMP
+GROUP BY DEPTNO
+HAVING COUNT(*) > 3;

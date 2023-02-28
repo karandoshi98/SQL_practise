@@ -1,0 +1,16 @@
+-- V23 -- NVL
+
+select ename, job, sal, NVL(comm, 0) 
+from emp
+where empno in (7839, 7698, 7566, 7654);
+
+
+-- Fill null with string No data found
+
+select ename, job, sal, nvl(to_char(comm), 'No data found') 
+from emp
+where empno in (7839, 7698, 7566, 7654);
+
+
+-- nullif 
+select ename, length(ename) , nvl(to_char(nullif(length(ename), 5)),'Length = 5') from EMP;

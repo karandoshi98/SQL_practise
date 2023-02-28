@@ -1,0 +1,33 @@
+-- v21 --SRF part4 -- Conversion SRFs and date formatting
+
+-- to_char
+
+select To_CHAR(sysdate,'mm-dd-yyyy day') from DUAL;
+
+select To_CHAR(sysdate,'month-dd-yyyy day') from DUAL;
+
+-- Different format elements for date - YEAR , MM , MONTH, MON, DY, DAY, DD, YYYY
+
+select To_CHAR(sysdate,'DD-MON-YYYY DY') from DUAL;
+
+select To_CHAR(sysdate,'ddth "of" MONTH , YYYY') from DUAL;
+
+-- Different format elements for number -  [9 - represents a number ; 0 - forces a zero in display ; $ - puts a dollar sign ; . - Decimal point ; , - comma for thousands seperator]
+
+SELECT ENAME, SAL,to_char(SAL,'$99,999.99') Salaries FROM EMP;
+
+-- to_date   NOTE: we have to specify the format that we are passing, so that it can parse the date
+
+SELECT to_date('2022-2-21','YYYY-MM-DD') from DUAL;
+
+SELECT to_date('3 of June, 2012','DD "of" MONTH , YYYY') from DUAL;
+
+
+--last_day
+
+SELECT last_day('03/02/2023') FROM DUAL;
+
+--next_day(d,c)
+
+SELECT next_day('03/01/2023','FRIDAY') FROM DUAL;
+

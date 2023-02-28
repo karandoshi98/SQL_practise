@@ -1,0 +1,22 @@
+--V16 - Ordering , concatenating and Aliasing Query Results
+
+SELECT * FROM EMP;
+
+--aliasing 
+SELECT ENAME as "Employee Name", SAL as "SALARY", COMM as "Commission"  FROM EMP;
+
+--Concatenating
+
+SELECT 'Hello my name is ' || ENAME as "Concatenated output" FROM EMP; 
+
+SELECT ENAME || ' makes $' || SAL || ' per month' as "Concatenated output" FROM EMP WHERE JOB = 'MANAGER';  
+
+
+--order by
+SELECT ENAME,SAL FROM EMP ORDER BY ENAME;
+
+SELECT * FROM EMP ORDER BY SAL desc;
+
+-- multiple order by
+
+SELECT ENAME, DEPTNO, SAL FROM EMP ORDER BY DEPTNO asc, SAL desc;

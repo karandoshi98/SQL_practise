@@ -1,0 +1,7 @@
+--V15 -- query filtering and operator precedence
+
+-- to write a query that returns those employees that are salesmen and that make either $300 in commission or greater than $1,000 in commission.
+
+SELECT ENAME FROM EMP
+WHERE JOB = 'SALESMAN' AND
+(COMM = 300 OR COMM > 1000);

@@ -1,0 +1,14 @@
+--V12 -- AND , OR
+
+-- Get the names of those employees that are not managers nor salesmen and have a salary greater than or equal to 2000 
+SELECT ENAME FROM EMP
+WHERE JOB != 'MANAGER'
+AND JOB != 'SALESMAN'
+AND SAL >= 2000
+
+--Get ename and hiredate of employees working in chcicago and dallas
+
+SELECT ename, hiredate FROM EMP
+WHERE DEPTNO IN (20,30)
+
+

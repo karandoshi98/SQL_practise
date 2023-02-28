@@ -1,0 +1,53 @@
+-- V20 -- SRF part 3 for numbers and date
+
+--round function
+select round(1345.3353,2) from DUAL;
+
+select round(1345.338963,3) from DUAL;
+
+select round(1345.36112,2) from DUAL;
+
+select round(1345.3) from DUAL;
+
+select round(1345.8) from DUAL;
+
+
+--trunc 
+
+select trunc(1345.3688,2) from DUAL;
+
+select trunc(1345.987) from DUAL;
+
+
+-- sysdate
+
+select sysdate from DUAL;
+
+--systimestamp
+
+select systimestamp from DUAL;
+
+--add_months
+
+select add_months('11/17/2012',3) from DUAL;
+
+select add_months('11/17/2012',-3) from DUAL;
+
+select add_months(sysdate,3) from DUAL;
+
+--months_between
+
+select months_between(sysdate,'06/01/2023') from DUAL;
+
+--trunc
+
+select systimestamp,trunc(systimestamp) from DUAL;
+
+select trunc(systimestamp,'YEAR') from DUAL;
+
+select trunc(systimestamp,'MONTH') from DUAL;
+
+select ename,hiredate ,trunc(hiredate,'MONTH') from EMP;
+
+select ename,hiredate ,trunc(hiredate,'MONTH') from EMP 
+where trunc(hiredate,'YEAR') = '01/01/1982';
